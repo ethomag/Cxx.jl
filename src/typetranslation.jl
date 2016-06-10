@@ -382,7 +382,7 @@ function _get_name(t)
     s
 end
 
-const unsafe_string = String
+# const unsafe_string = String
 
 function get_name(t)
     s = _get_name(t)
