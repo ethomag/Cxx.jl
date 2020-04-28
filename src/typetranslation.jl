@@ -292,7 +292,7 @@ function cpptype(C,::Type{T}) where T
         InverseMappedTypes[MappedTypes[T]] = T
         # For callable julia types, also add an operator() method to the anonymous
         # class
-        if !isempty(T.name.mt)
+        if !isempty(T.name.mt) && isa(T.name.mt.defs, Core.TypeMapEntry)
             linfo = T.name.mt.defs.func
             sig = T.name.mt.defs.sig
             nargt = length(sig.parameters)-1
